@@ -1,67 +1,309 @@
-@import "../variables";
+@use "../../presets" as *;
 
 .header {
-  background-color: $text-color-white;
+    position: relative;
+    width: 96%;
+    margin-inline: auto;
+    background-color: $color-white;
+
+    .menu {
+        margin-top: 2%;
+        background-color: $color-primary;
+        padding: 10px;
+
+
+        &__list {
+            display: none;
+            width: 100%;
+            margin-top: 10px;
+            z-index: 1;
+        }
+        
+        &__link {
+            display: block;
+            padding: 10px;
+            font-size: 14px;
+            color: $color-menu-font;
+            transition: all .5s;
+            
+            &:focus,
+            &:hover {
+                background-color: $color-gray-light;
+                color: $color-white;
+            }
+        }
+        
+        #menu-toggle {
+            display: none;
+        }
+        
+        #menu-toggle:checked ~ .menu__list {
+            display: block;
+        }
+
+        .menu-toggle {
+            position: relative;
+            display: block;
+            height: 25px;
+            width: 30px;
+
+            &::before, &::after, & span {
+                position: absolute;
+                width: 90%;
+                height: 3px;
+                background-color: $color-menu-font;
+                transition: all .4s;
+            }
+
+            &::before {
+                content: "";
+                top: 0;
+            }
+
+            &::after {
+                content: "";
+                bottom: 0;
+            }
+
+            & span {
+                top: 11px;
+            }
+        }
+
+        #menu-toggle:checked ~ .menu-toggle::after {
+            transform: rotate(45deg);
+            bottom: 10px;
+        }
+
+        #menu-toggle:checked ~ .menu-toggle::before {
+            transform: rotate(-45deg);
+            top: 12px;
+        }
+
+        #menu-toggle:checked ~ .menu-toggle span {
+            transform: rotate(-45deg);
+            top: 12px;
+        }
+    }
+
+    &__title {
+        position: absolute;
+        right: 5%;
+        top: 0;
+        padding: 5px;
+        line-height: 30px;
+        vertical-align: middle;
+        font-size: 20px;
+        color: $color-menu-font;
+        
+        .header__logo {
+            aspect-ratio: 1;
+            width: 30px;
+            vertical-align: middle;
+            background-color: $color-menu-font;
+            border-radius: 50px;
+        }
+    }
+
+    .nav {
+        width: 100%;
+        padding: 10px;
+
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            row-gap: 5px;
+            width: 100%;
+
+        }
+
+        &__item {
+            flex-basis: 33%;
+            text-align: center;
+            transition: all .5s;
+        }
+
+        &__link {
+            display: block;
+            padding: 5px;
+            color: $color-black;
+            transition: all .5s;
+
+            &:focus,
+            &:hover {
+                background-color: $color-primary;
+            }
+        }
+    }
+
+    .hero {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        background-color: $color-menu-font;
+        background-image: url(../images/hero.png);
+        background-attachment: left;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: $color-white;
+
+        &__box {
+            margin: 25px;
+        }
+
+        &__title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        &__info {
+            max-width: 25ch;
+            font-size: 12px;
+            line-height: 18px;
+            font-weight: 300;
+        }
+
+        &__link {
+            display: block;
+            text-align: center;
+            width: 150px;
+            height: 40px;
+            margin-top: 10px;
+            font-size: 14px;
+            line-height: 36px;
+            background-color: $color-secondary;
+            color: $color-white;
+            border: 2px solid $color-white;
+            border-radius: 40px;
+            transition: all .5s;
+
+            &:focus,
+            &:hover {
+                background-color: $color-white;
+                color: $color-secondary;
+            }
+        }
+    }
 }
 
-.menu {
-  background-color: #e5e5e5;
-  padding: 18px 0;
-  display: flex;
-  justify-content: center;
-  &__list {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-  }
-  &__link {
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
+@media screen and (min-width: 901px) {
+    .header {
+        width: 100%;
+        margin: 0;
 
-    color: $text-color-black;
-  }
-  &__middle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 50px;
-  }
-  &__contact {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: #000000;
-  }
-  &__callback {
-    background: #ffffff;
-    border: 2px solid #f13c6e;
-    border-radius: 40px;
-   width: 170px;
-   height: 40px;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
-    color: #000000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  &__bottom{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+        .menu {
+            margin: 0;
+            padding: 0;
+    
+            &__list {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+            }
+            
+            &__link {
+                display: block;
+                padding: 16.5px 15px;
+                transition: all .5s;
+            }
+            
+            #menu-toggle, .menu-toggle {
+                display: none;
+                opacity: 0;
+            }
+        }
+
+        &__container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        &__title {
+            position: relative;
+            inset: 0;
+            padding: 0;
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 42px;
+            color: $color-secondary;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            
+            .header__logo {
+                aspect-ratio: 1;
+                width: 80px;
+                vertical-align: middle;
+                background-color: transparent;
+                border-radius: 0;
+            }
+        }
+
+        .nav {
+            padding: 0;
+    
+            &__list {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: nowrap;
+                row-gap: 0;
+                width: 100%;
+            }
+    
+            &__item {
+                flex-basis: auto;
+            }
+    
+            &__link {
+                padding: 30px 20px;
+                font-size: 1rem;
+                line-height: 19px;
+            }
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            min-height: 604px;
+            background-image: url(../images/hero.png);
+    
+            &__box {
+                width: 308px;
+                margin: 0;
+                margin-left: 21%;
+            }
+    
+            &__title {
+                font-size: 48px;
+                font-weight: 700;
+                line-height: 56px;
+                margin-bottom: 44px;
+                vertical-align: bottom;
+            }
+    
+            &__info {
+                display: flex;
+                flex-direction: column;
+                max-width: 35ch;
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 400;
+            }
+    
+            &__link {
+                display: block;
+                width: 170px;
+                margin-top: 19px;
+                letter-spacing: 0.05em;
+            }
+        }
+    }
 }
