@@ -20,7 +20,6 @@
         }
         
         &__link {
-            display: block;
             padding: 10px;
             font-size: 14px;
             color: $color-menu-font;
@@ -87,12 +86,11 @@
     }
 
     &__title {
-        position: absolute;
-        right: 5%;
-        top: 0;
+        display: flex;
+        align-items: center;
         padding: 5px;
         line-height: 30px;
-        vertical-align: middle;
+       
         font-size: 20px;
         color: $color-menu-font;
         
@@ -126,7 +124,6 @@
         }
 
         &__link {
-            display: block;
             padding: 5px;
             color: $color-black;
             transition: all .5s;
@@ -161,14 +158,13 @@
         }
 
         &__info {
-            max-width: 25ch;
+            max-width: 350px;
             font-size: 12px;
             line-height: 18px;
             font-weight: 300;
         }
 
         &__link {
-            display: block;
             text-align: center;
             width: 150px;
             height: 40px;
@@ -207,7 +203,6 @@
             }
             
             &__link {
-                display: block;
                 padding: 16.5px 15px;
                 transition: all .5s;
             }
@@ -292,14 +287,13 @@
             &__info {
                 display: flex;
                 flex-direction: column;
-                max-width: 35ch;
+                max-width: 350px;
                 font-size: 14px;
                 line-height: 20px;
                 font-weight: 400;
             }
     
             &__link {
-                display: block;
                 width: 170px;
                 margin-top: 19px;
                 letter-spacing: 0.05em;

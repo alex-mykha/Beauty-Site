@@ -19,6 +19,7 @@ ol {
 }
 
 a {
+  display: block;
   text-decoration: none;
 }
 
@@ -179,7 +180,6 @@ hr {
   z-index: 1;
 }
 .header .menu__link {
-  display: block;
   padding: 10px;
   font-size: 14px;
   color: rgb(51, 51, 51);
@@ -232,12 +232,10 @@ hr {
   top: 12px;
 }
 .header__title {
-  position: absolute;
-  right: 5%;
-  top: 0;
+  display: flex;
+  align-items: center;
   padding: 5px;
   line-height: 30px;
-  vertical-align: middle;
   font-size: 20px;
   color: rgb(51, 51, 51);
 }
@@ -266,7 +264,6 @@ hr {
   transition: all 0.5s;
 }
 .header .nav__link {
-  display: block;
   padding: 5px;
   color: #000000;
   transition: all 0.5s;
@@ -295,13 +292,12 @@ hr {
   margin-bottom: 20px;
 }
 .header .hero__info {
-  max-width: 25ch;
+  max-width: 350px;
   font-size: 12px;
   line-height: 18px;
   font-weight: 300;
 }
 .header .hero__link {
-  display: block;
   text-align: center;
   width: 150px;
   height: 40px;
@@ -335,7 +331,6 @@ hr {
     margin: 0;
   }
   .header .menu__link {
-    display: block;
     padding: 16.5px 15px;
     transition: all 0.5s;
   }
@@ -408,13 +403,12 @@ hr {
   .header .hero__info {
     display: flex;
     flex-direction: column;
-    max-width: 35ch;
+    max-width: 350px;
     font-size: 14px;
     line-height: 20px;
     font-weight: 400;
   }
   .header .hero__link {
-    display: block;
     width: 170px;
     margin-top: 19px;
     letter-spacing: 0.05em;
@@ -451,14 +445,13 @@ hr {
   font-weight: 700;
 }
 .main .promo__info {
-  max-width: 17ch;
+  max-width: 160px;
   margin-block: 15px;
   font-size: 12px;
   font-weight: 300;
 }
 .main .promo__input {
-  width: 70%;
-  padding: 5px 10px;
+  padding: 9px 25px;
   outline: none;
   border: none;
   border-radius: 30px;
@@ -473,7 +466,6 @@ hr {
   padding-left: 15px;
 }
 .main .promo__link {
-  display: block;
   text-align: center;
   width: 140px;
   height: 30px;
@@ -507,7 +499,6 @@ hr {
   border: 1px solid rgb(239, 239, 239);
 }
 .main .partners__link {
-  display: block;
   text-align: center;
 }
 .main .partners__logo {
@@ -563,8 +554,6 @@ hr {
     line-height: 20px;
   }
   .main .promo__input {
-    width: 225px;
-    padding: 9.5px 25px;
     outline: none;
     border: none;
     border-radius: 30px;
@@ -642,7 +631,6 @@ hr {
   max-width: 10ch;
 }
 .footer .additional__link {
-  display: block;
   color: rgb(130, 130, 130);
   padding: 4px;
   font-size: 12px;
